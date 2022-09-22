@@ -7,14 +7,15 @@ jobs:
   build-test:
     docker:
       - image: cimg/base:stable
+
     steps:
       - checkout
       - node/install:
-        node-version: '16.13'
+          node-version: '16.13'
       - node/install-packages:
-        cache-path: ~/project/node_modules
-        override-ci-command: npm install
-      
+          cache-path: ~project/node_modules
+          override-ci-command: npm install
+
       - run: npm run build
       - run: npm test
 
