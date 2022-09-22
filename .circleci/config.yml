@@ -4,15 +4,11 @@ jobs:
   build-test:
     docker:
       - image: cimg/nodenode:16.17.0
-  
-  steps:
-    - checkout
-
-    - run: npm install
-
-    - run: npm run build
-
-    - run: npm test
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+      - run: npm test
 
 workflows:
   build:
